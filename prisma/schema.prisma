@@ -11,10 +11,10 @@ datasource db {
 }
 
 model Author {
-  
+  id Int @id @default(autoincrement())
 
 }
 
 model Book {
-
+  id Int @id @default(autoincrement())
 }

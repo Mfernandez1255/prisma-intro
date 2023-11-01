@@ -102,6 +102,13 @@ const seed = async () => {
                 name: 'Kurt Vonnegut',
                 books: ['Slaughterhouse-Five', 'Cats Cradle', 'Breakfast of Champions'], 
             },       
-        ]
+        ],
     })
-}
+};
+seed()
+  .then(async () => await prisma.$disconnect())
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
+  });
